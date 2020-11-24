@@ -39,8 +39,7 @@ end files with a newline]
     When you are done, you can quit Emacs with C-x C-c.
 
 (7) Did something go wrong?  If so, fix it, and add/push/commit/grade
-    again.  If everything went right, you should have your gotten
-    your next assignment when you did git pull. After you quit emacs,
+    again.  If everything went right, you should have your gotte  your next assignment when you did git pull. After you quit emacs,
     cd to that directory:
       cd ../01_apple
     and open the README there in emacs.  Follow its instructions!
