@@ -27,14 +27,12 @@ struct rectanglestruct{
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
   if (r.width < 0){
-    r.width = abs(r.width);
     r.x = r.x + r.width;
-    return r;
+    r.width = abs(r.width);
   }
   if (r.height < 0){
-    r.height = abs(r.height);
     r.y = r.y + r.height;
-    return r;
+    r.height = abs(r.height);
   }
   return r;
 }
@@ -87,23 +85,23 @@ int main (void) {
   printf("r1 is ");
   printRectangle(r1);
 
-  r2.x = 9;
+  r2.x = 4;
   r2.y = 5;
-  r2.width = 5;
+  r2.width = -5;
   r2.height = -7;
   printf("r2 is ");
   printRectangle(r2);
   
   r3.x = -2;
-  r3.y = 17;
+  r3.y = 7;
   r3.width = 7;
-  r3.height = 10;
+  r3.height = -10;
   printf("r3 is ");
   printRectangle(r3);
 
-  r4.x = 4;
+  r4.x = 0;
   r4.y = 7;
-  r4.width = 4;
+  r4.width = -4;
   r4.height = 2;
   printf("r4 is ");
   printRectangle(r4);
