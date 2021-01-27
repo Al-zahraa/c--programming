@@ -1,9 +1,8 @@
-Grading at Wed Jan 27 17:32:08 UTC 2021
+Grading at Wed Jan 27 17:33:50 UTC 2021
 Attempting to compile test.c
 gcc -o test -pedantic -std=gnu99 -Wall -Werror test.c
 compiled
-Line_6_did_not_match
-Your file did not match the expected ouput
-Your output did not match what we expected.
+Your file matched the expected output
+Your output matched what we expected
 
-Overall Grade: F
+Overall Grade: A
