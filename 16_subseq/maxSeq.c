@@ -10,17 +10,14 @@ size_t maxSeq(int * array, size_t n){
   }
   
   for (int i = 1; i < n; i++){
-    if ( (current > array[i]) || (current == array[i])){
+    if ( (current > array[i])){ //|| (current == array[i])){
       current = array[i];
       maxseq = 1;
     }
-   else if (current < array[i]){
+   if (current < array[i]){
       current = array[i];
       maxseq++;
     }
-   else {
-     continue;
-   }
   }
   return maxseq;
 }
