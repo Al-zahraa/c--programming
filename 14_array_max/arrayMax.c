@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int * arrayMax(int * array, size_t n) {
+int * arrayMax(int * array, int  n) {
   if ( n == 0){
     return NULL;
   }
   else{
     int * p = &array[0];
     int largestvalue = array[0];
-    for ( int i = 0; i < n; i++){
+    for ( int i = 1; i < n; i++){
       if ( array[i] > largestvalue){
 	p = &array[i]; 
       }
