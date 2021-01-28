@@ -5,16 +5,15 @@ int * arrayMax(int * array, int  n) {
   if ( n == 0){
     return NULL;
   }
-  else{
     int * p = &array[0];
     int largestvalue = array[0];
     for ( int i = 1; i < n; i++){
       if ( array[i] > largestvalue){
+	largestvalue = array[i];
 	p = &array[i]; 
       }
     }
     return p;
-  }
     
 }
 
