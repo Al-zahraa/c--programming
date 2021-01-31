@@ -11,11 +11,11 @@ size_t maxSeq(int * array, size_t n){
   }
   
   for (int i = 1; i < n; i++){
-    if ( (current > array[i])){
+    if ( (current > array[i]) || (current == array[i]){
       current = array[i];
       tempmax = 1;
     }
-   if (current < array[i]){
+      else if (current < array[i]){
       current = array[i];
       tempmax ++;
    }
