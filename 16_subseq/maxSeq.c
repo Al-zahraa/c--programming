@@ -19,6 +19,10 @@ size_t maxSeq(int * array, size_t n){
       current = array[i];
       tempmax ++;
    }
+      else {
+	current = array[i];
+	tampmax = 1;
+      }
    if (tempmax > maxseq) {
      maxseq = tempmax;
    }
