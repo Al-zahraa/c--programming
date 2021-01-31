@@ -15,16 +15,16 @@ size_t maxSeq(int * array, size_t n){
       // current = array[i];
       // tempmax = 1;
       // }
-    if ((current < array[i]) || (current == array[i])){
+    if ((current < array[i])){
       current = array[i];
       tempmax ++;
    }
-      else {
-	current = array[i];
-   if (tempmax > maxseq) {
-     maxseq = tempmax;
-   }
-   tempmax = 1;
+    else if (current > array[i] || (current == array[i])){
+      current = array[i];
+      if (tempmax > maxseq) {
+          maxseq = tempmax;
+      }
+      tempmax = 1;
   }
   }
   return maxseq;
