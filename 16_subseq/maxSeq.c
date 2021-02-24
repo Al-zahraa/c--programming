@@ -1,24 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-
+#include<stdio.h>
+#include<stdlib.h>
 size_t maxSeq(int * array, size_t n){
-  size_t maxseq = 0;
-  size_t tempmax = 1 ;
-  size_t current = array[0];
-  if ( n == 0){return 0;}
+  size_t  lenth= 1;
+  size_t maxlen=0;
+  if (n == 0 ) return 0;
 
-  for (size_t i = 1; i < n; i++){
-    if (current < array[i]){
-      current = array[i];
-      tempmax ++;
-    }
-    else{
-      current = array[i];
-      if (tempmax > maxseq){maxseq = tempmax;}
-      tempmax = 1;
+  for(size_t i=1 ; i<n ;i++ ){
+    if (array[i] > array[i-1]){lenth += 1;}
+    else {
+      if (lenth > maxlen) maxlen = lenth;
+      lenth=1;
     }
   }
-  if (tempmax > maxseq){maxseq = tempmax;}
-  return maxseq;
-} 
+  if (lenth > maxlen) maxlen = lenth;
+  return maxlen;
+}
