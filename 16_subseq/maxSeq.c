@@ -22,6 +22,6 @@ size_t maxSeq(int * array, size_t n){
       }
     }
   }
-  if (lenth > maxlen) maxlen = lenth;
+  if (tempmax > maxseq) maxseq = tempmax;
   return maxseq;
 }
