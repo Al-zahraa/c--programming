@@ -9,7 +9,7 @@ size_t maxSeq(int * array, size_t n){
   if ( n == 0){return 0;}
 
   for (size_t i = 1; i < n; i++){
-    if (current < array[i]){tempmax ++;}
+    if (current < array[i]){tempmax +=1;}
     else{
       if (tempmax > maxseq){maxseq = tempmax;}
       tempmax = 1;
