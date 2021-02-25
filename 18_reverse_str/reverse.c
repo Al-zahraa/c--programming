@@ -12,6 +12,7 @@ void reverse(char * str) {
       str[i] = str[size -i -1];
       str[size -i -1] = temp;
     }
+    return;
 }
 
 int main(void) {
