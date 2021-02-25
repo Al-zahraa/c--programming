@@ -4,9 +4,10 @@
 
 void reverse(char * str) {
   //WRITE ME!
+  if (str == NULL) return;
   size_t size = strlen(str);
   char temp ;
-  if (str == NULL ) return;
+ 
     for ( size_t i = 0; i < size/2 ; i++){
       temp  = str[i];
       str[i] = str[size -i -1];
