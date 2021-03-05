@@ -11,7 +11,7 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
   else if ((**cvp1).value < (**cvp2).value) return 1;
   else if ((**cvp1).suit < (**cvp2).suit) return -1;
   else if ((**cvp1).suit > (**cvp2).suit) return 1;
-  else return 0;  
+  else return 0;
 }
 
 suit_t flush_suit(deck_t * hand) {
@@ -61,7 +61,7 @@ ssize_t  find_secondary_pair(deck_t * hand,
   card_t tempc1, tempc2;
   tempc1 = **(card+0);
   tempc2 = **(card + match_idx);
-  
+
   for (size_t i = 0; i < (hand ->n_cards); i++){
     tempc1=**(card+i);
     if ((match_counts[i] > 1)&&(tempc1.value != tempc2.value)) return i;
@@ -70,7 +70,7 @@ ssize_t  find_secondary_pair(deck_t * hand,
 }
 
 int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
-  
+
   int count = 1;
   if (fs ==NUM_SUITS ){
     for (size_t i = index; i < hand -> n_cards-1; i++){
@@ -98,7 +98,7 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
 }
 
 int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
-  
+
   if((*hand->cards[index]).value == VALUE_ACE){
     for(size_t i = index+1; i<hand ->n_cards-3; i++){
       int num = is_n_length_straight_at(hand, i, fs, 4);
@@ -113,8 +113,8 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
 }
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
-    if (is_ace_low_straight_at(hand, index,fs)) return -1;
-    return is_n_length_straight_at(hand, index, fs, 5);
+  if (is_ace_low_straight_at(hand, index,fs)) return -1;
+  return is_n_length_straight_at(hand, index, fs, 5);
 }
 
 hand_eval_t build_hand_from_match(deck_t * hand,
@@ -130,14 +130,14 @@ hand_eval_t build_hand_from_match(deck_t * hand,
   for(size_t i = 0; i < n; i++){
     ans.cards[i] = *(card +idx+i);
   }
-  
+
   if (n < 5){
     for(size_t j = 0; j < idx; j++){
       ans.cards[j+n] = *(card +j);
       count ++;
       if (count == 5 )  break;
     }
-    
+
     if (count < 5){
       for (size_t z = n+idx ; z < hand -> n_cards+1 ; z++ ){
 	ans.cards[count]=*(card +z);
@@ -155,11 +155,11 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 
   hand_eval_t temphand1= evaluate_hand(hand1);
   hand_eval_t temphand2= evaluate_hand(hand2);
-  
+
   if (temphand1.ranking < temphand2.ranking) return 1;
   else if (temphand1.ranking > temphand2.ranking) return -1;
   else {
-    
+
     for (size_t i = 0; i < 5; i++){
       card_t * card1 = temphand1.cards[i];
       card_t * card2 = temphand2.cards[i];
@@ -170,7 +170,6 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   }
   return 0;
 }
-
 
 
 //You will write this function in Course 4.
